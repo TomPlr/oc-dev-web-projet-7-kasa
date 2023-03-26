@@ -1,0 +1,30 @@
+.card-container{
+    position: relative;
+    height: 340px;
+    width: 340px;
+}
+
+.card-image{
+    height: inherit;
+    width: inherit;
+    border-radius: 10px;
+}
+
+.card-title-container{
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+  width: 100%;
+  background-color: rgba(55, 55, 55, 0.394);
+  border-radius:0 0 10px 10px;
+
+
+}
+
+.card-title{
+
+    color: white;
+    width: 70%;
+    margin: 10px 15px;
+    font-size: 18px;
+}
