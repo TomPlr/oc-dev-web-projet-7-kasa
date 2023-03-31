@@ -1,42 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import Collapse from '../../components/Collapse/Collapse';
-import housing from '../../data/housing.json';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import Collapse from '../../components/Collapse/Collapse';
+import Rating from '../../components/Rating/Rating';
+import Slideshow from '../../components/Slideshow/Slideshow';
+import housing from '../../data/housing.json';
+import NotFound from '../NotFound/NotFound';
+import './Housing.scss';
 
 const Housing = () => {
   const { id } = useParams();
+  const dataHousing = housing.find((element) => element.id === id);
 
-  const [selectedHousingIndex, setSelectedHousingIndex] = useState(null);
-
-  useEffect(() => {
-    const index = housing.findIndex((element) => element.id === id);
-    setSelectedHousingIndex(index);
-  }, [id]);
+  if (!dataHousing) {
+    return <NotFound />
+  }
+  
 
   return (
     <div className='housing-container'>
-      <div className='housing-information-container'>
-        <div className='housing-details-left-part'></div>
-        <div className='housing-details-right-part'></div>
+      <div>
+        <Slideshow galerie={dataHousing.pictures} />
       </div>
 
-      {selectedHousingIndex !== null ? (
-        <div className='collapse-container'>
-          <Collapse
-            title='Description'
-            description={housing[selectedHousingIndex].description}
-            key={housing[selectedHousingIndex].id}
-          />
-
-          <Collapse
-            title='Équipements'
-            description={housing[selectedHousingIndex].equipments}
-            key= {id + 0}
-          />
+      <div className='housing-information-container'>
+        <div className='housing-details-left-part'>
+          <h2 className='housing-title'>{dataHousing.title}</h2>
+          <p className='housing-location'>{dataHousing.location}</p>
+          <div className='housing-tags'>
+            {dataHousing.tags.map((tag) => (
+              <div className='tag' key={tag}>
+                {tag}
+              </div>
+            ))}
+          </div>
         </div>
-      ) : null}
+        <div className='housing-details-right-part'>
+          <div className='owner'>
+            <p className='owner-name'>{ dataHousing.host.name}</p>
+            <img src={dataHousing.host.picture} alt=""className='owner-picture' />
+          </div>
+          <div className='rating'>
+              <Rating rate={dataHousing.rating} />
+          </div>
+        </div>
+      </div>
+
+      <div className='housing-collapse-container'>
+        <Collapse title='Description' description={dataHousing.description} />
+        <Collapse title='Équipements' description={dataHousing.equipments} />
+      </div>
     </div>
   );
+  
 };
 
 export default Housing;

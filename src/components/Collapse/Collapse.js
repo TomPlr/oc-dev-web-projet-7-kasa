@@ -11,7 +11,13 @@ const Collapse = ({ title, description }) => {
         <p className='collapse-title__text'>{title}</p>
         <div className= { isOpen ? 'collapse-title__image collapse-title__image--up': 'collapse-title__image' }></div>
       </div>
-      {isOpen && <div className='collapse-description'>{description}</div>}
+      {isOpen && <div className='collapse-description'>
+        {title === 'Équipements' ?
+          description.map((equipment,index) => <li key={index}>{equipment}</li>)
+          :  description 
+      }
+        
+      </div>}
     </div>
   );
 };
