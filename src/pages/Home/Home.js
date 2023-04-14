@@ -1,8 +1,8 @@
 import React from 'react';
+import HomeBanner from '../../assets/images/home-banner.jpg';
 import Banner from '../../components/Banner/Banner';
-import HomeBanner from '../../assets/images/home-banner.jpg'
-import './Home.scss';
 import Card from '../../components/Card/Card';
+import './Home.scss';
 
 const Home = () => {
   return (
