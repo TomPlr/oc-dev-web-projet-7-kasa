@@ -4,17 +4,23 @@ import logo from '../../assets/logos/kasa-main-logo.svg';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 const Header = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <header className='header'>
       <img src={logo} alt='kasa-main-logo' className='header__logo' />
       <nav className='navigation-list'>
-        <Link to={'/'} className={location.pathname === "/" ? 'is-active': 'navigation-list__element' }>
-          Accueil
+        <Link
+          to={'/'}
+          className={`navigation-list__element ${location.pathname === '/' ? "is-active" : ""}`}
+        >
+          ACCUEIL
         </Link>
-        <Link to={'/about'} className={location.pathname === "/about" ? 'is-active': 'navigation-list__element' }>
-          À Propos
+        <Link
+          to={'/about'}
+          className={`navigation-list__element ${location.pathname === '/about' ? "is-active" : ""}`}
+        >
+          À PROPOS
         </Link>
       </nav>
     </header>

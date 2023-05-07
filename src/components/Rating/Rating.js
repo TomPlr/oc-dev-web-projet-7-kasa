@@ -16,7 +16,7 @@ const Rating = ({ rate }) => {
   }
 
   return (
-    <div>
+    <div className='rating'>
       {fullRate.map((index) => (
         <img key={index} src={fullStar} alt='star-full'/>
       ))}

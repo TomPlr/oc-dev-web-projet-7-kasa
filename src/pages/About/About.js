@@ -6,6 +6,7 @@ import AboutBanner from '../../assets/images/about-banner.jpg';
 import './About.scss';
 
 const About = () => {
+  console.log(Data);
   return (
     <div>
       <div className='about-banner'>
@@ -14,9 +15,10 @@ const About = () => {
       <div className='about-collapse'>
         {Data.map((collapse) => (
           <Collapse
+            key={collapse.id}
             title={collapse.title}
             description={collapse.text}
-            key={collapse.id}
+            opened={collapse.id === "1" ? true : false}
           />
         ))}
       </div>

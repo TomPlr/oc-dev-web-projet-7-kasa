@@ -1,15 +1,29 @@
-.home-banner{
-    margin: 63px 0 43px 0;
+.home-banner {
+  margin: 63px 0 43px 0;
 }
 
-.cards-container{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    row-gap: 50px;
-    column-gap: 60px;
-    background-color: #F6F6F6;
-    padding: 56px 50px;
-    border-radius: 25px;
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 60px;
+  row-gap: 50px;
+  background-color: #f6f6f6;
+  padding: 56px 50px;
+  border-radius: 25px;
 }
+
+@media (max-width:768px) {
+    .home-banner {
+        margin: 20px 0 22px 0;
+      }
+      
+    .cards-container {
+      
+        background-color: #ffffff;
+        padding:0;
+        border-radius: 25px;
+        row-gap: 20px;
+      }
+      
+  }

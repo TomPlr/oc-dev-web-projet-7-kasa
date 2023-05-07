@@ -22,6 +22,20 @@
   color: white;
   font-style: normal;
   font-weight: 500;
-  font-size: 48px;
+  font-size: min(3vw, 48px);
   width: max-content;
+}
+
+@media (max-width: 768px) {
+
+  .banner-text {
+    font-size: 24px;
+    width: 220px;
+    left: 16px;
+    transform: translateY(-50%);
+  }
+
+  .home-banner{
+    height: 111px;
+  }
 }

@@ -11,11 +11,13 @@ const Housing = () => {
   const { id } = useParams();
   const dataHousing = housing.find((element) => element.id === id);
 
-  if (!dataHousing) {
-    return <NotFound />
-  }
-  
+  const ownerName = dataHousing.host.name.split(' ', 2);
 
+  if (!dataHousing) {
+    return <NotFound />;
+  }
+
+  console.log(dataHousing.host.name.split(' ', 2));
   return (
     <div className='housing-container'>
       <div>
@@ -36,22 +38,34 @@ const Housing = () => {
         </div>
         <div className='housing-details-right-part'>
           <div className='owner'>
-            <p className='owner-name'>{ dataHousing.host.name}</p>
-            <img src={dataHousing.host.picture} alt=""className='owner-picture' />
+            <div className='owner-full-name'>
+              <p className='owner-name'>{ownerName[0]}</p>
+              <p className='owner-name'>{ownerName[1]}</p>
+            </div>
+            <img
+              src={dataHousing.host.picture}
+              alt=''
+              className='owner-picture'
+            />
           </div>
-          <div className='rating'>
-              <Rating rate={dataHousing.rating} />
-          </div>
+          <Rating rate={dataHousing.rating} />
         </div>
       </div>
 
       <div className='housing-collapse-container'>
-        <Collapse title='Description' description={dataHousing.description} />
-        <Collapse title='Équipements' description={dataHousing.equipments} />
+        <Collapse
+          title='Description'
+          description={dataHousing.description}
+          opened={true}
+        />
+        <Collapse
+          title='Équipements'
+          description={dataHousing.equipments}
+          opened={true}
+        />
       </div>
     </div>
   );
-  
 };
 
 export default Housing;
