@@ -10,18 +10,16 @@ import './Housing.scss';
 const Housing = () => {
   const { id } = useParams();
   const dataHousing = housing.find((element) => element.id === id);
-
-  const ownerName = dataHousing.host.name.split(' ', 2);
+  const ownerName = dataHousing?.host.name.split(' ', 2);
 
   if (!dataHousing) {
     return <NotFound />;
   }
 
-  console.log(dataHousing.host.name.split(' ', 2));
   return (
     <div className='housing-container'>
       <div>
-        <Slideshow galerie={dataHousing.pictures} />
+        <Slideshow gallery={dataHousing.pictures} />
       </div>
 
       <div className='housing-information-container'>

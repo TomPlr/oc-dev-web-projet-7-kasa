@@ -11,7 +11,7 @@ const NotFound = () => {
         <div>
           <h1 className='not-found-information__title'>404</h1>
           <p className='not-found-information__text'>
-            Oups! La page que vous demandez n'existe pas
+            Oups! La page que vous demandez n'existe pas.
           </p>
         </div>
         <div>
@@ -19,7 +19,7 @@ const NotFound = () => {
             className='not-found-information__link'
             onClick={() => navigate('/')}
           >
-            Retourner sur la page d'accueuil
+            Retourner sur la page d'accueil
           </p>
         </div>
       </div>

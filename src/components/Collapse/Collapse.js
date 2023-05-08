@@ -4,7 +4,6 @@ import './Collapse.scss';
 const Collapse = ({ title, description, opened }) => {
   const [isOpen, setIsOpen] = useState(opened || false);
 
-  
   return (
     <div className='collapse-container'>
       <div className='collapse-title' onClick={() => setIsOpen(!isOpen)}>

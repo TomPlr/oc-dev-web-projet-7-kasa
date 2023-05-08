@@ -1,8 +1,9 @@
+@import '../../style/variables.scss';
+
 .card-container {
   position: relative;
   height: 340px;
   width: 340px;
- 
 
   &:hover {
     cursor: pointer;
@@ -10,9 +11,8 @@
 }
 
 .card-image {
-  height: inherit;
+  height: 100%;
   width: 100%;
-
   border-radius: 10px;
   object-fit: cover;
 }
@@ -22,16 +22,18 @@
   z-index: 2;
   bottom: 0;
   width: 100%;
-  background-color: rgba(55, 55, 55, 0.394);
+  background-color: $card-title-background;
   border-radius: 0 0 10px 10px;
 }
 
 .card-title {
-  color: white;
+  color: $secondary-color;
   width: 70%;
   margin: 10px 15px;
   font-size: 18px;
 }
+
+/* MEDIA QUERIES */
 
 @media (max-width: 1440px) {
   .card-container {
@@ -39,9 +41,8 @@
   }
 }
 
-
 @media (max-width: 768px) {
-    .card-container {
-      height: 255px;
-    }
+  .card-container {
+    height: 255px;
   }
+}

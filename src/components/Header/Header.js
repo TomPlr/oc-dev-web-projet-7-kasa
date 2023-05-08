@@ -20,7 +20,7 @@ const Header = () => {
           to={'/about'}
           className={`navigation-list__element ${location.pathname === '/about' ? "is-active" : ""}`}
         >
-          À PROPOS
+          A PROPOS
         </Link>
       </nav>
     </header>

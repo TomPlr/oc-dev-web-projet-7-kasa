@@ -1,29 +1,31 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
 .home-banner {
   margin: 63px 0 43px 0;
 }
 
 .cards-container {
-  display: flex;
+  @include flex-center;
   flex-wrap: wrap;
-  justify-content: center;
   column-gap: 60px;
   row-gap: 50px;
-  background-color: #f6f6f6;
+  background-color: $card-container-background;
   padding: 56px 50px;
   border-radius: 25px;
 }
 
-@media (max-width:768px) {
-    .home-banner {
-        margin: 20px 0 22px 0;
-      }
-      
-    .cards-container {
-      
-        background-color: #ffffff;
-        padding:0;
-        border-radius: 25px;
-        row-gap: 20px;
-      }
-      
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .home-banner {
+    margin: 20px 0 22px 0;
   }
+
+  .cards-container {
+    background-color: $secondary-color;
+    padding: 0;
+    border-radius: 25px;
+    row-gap: 20px;
+  }
+}

@@ -349,7 +349,7 @@ template {
 }
 
 
-
+/* MAIN STYLE */
 
 body {
   margin: 0 auto;
@@ -384,7 +384,7 @@ p{
 }
 
 
-
+/* MEDIA QUERIES */
 
 @media (max-width:768px) {
   .layout-container{

@@ -1,3 +1,6 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
 .banner-container {
   position: relative;
   display: block;
@@ -14,20 +17,19 @@
 }
 
 .banner-text {
-  margin: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  @include absolute-center;
+  margin: 0;
+  color: $secondary-color;
   font-style: normal;
   font-weight: 500;
-  font-size: min(3vw, 48px);
+  font-size: clamp(24px, 3vw, 48px);
   width: max-content;
 }
 
-@media (max-width: 768px) {
+/* MEDIA QUERIES */
 
+@media (max-width: 768px) {
   .banner-text {
     font-size: 24px;
     width: 220px;
@@ -35,7 +37,7 @@
     transform: translateY(-50%);
   }
 
-  .home-banner{
+  .home-banner {
     height: 111px;
   }
 }

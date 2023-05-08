@@ -1,3 +1,6 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
 .slideshow-container {
   box-sizing: border-box;
   position: relative;
@@ -15,19 +18,17 @@
 .arrow {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   height: 80px;
   width: 46px;
-  transform: translateY(-50%);
 
   &__forward {
-    background: url('../../assets/icons/arrow_forward.svg') center / contain
-      no-repeat;
+    @include background-image('../../assets/icons/arrow_forward.svg');
     right: 10px;
   }
 
   &__backward {
-    background: url('../../assets/icons/arrow_backward.svg') center / contain
-      no-repeat;
+    @include background-image('../../assets/icons/arrow_backward.svg');
     left: 10px;
   }
 
@@ -41,10 +42,12 @@
   bottom: 10px;
   right: 50%;
   transform: translateX(50%);
-  color: white;
+  color: $secondary-color;
   font-size: 20px;
   font-weight: 600;
 }
+
+/* MEDIA QUERIES */
 
 @media (max-width: 768px) {
   .slideshow-container {

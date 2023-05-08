@@ -6,7 +6,6 @@ import AboutBanner from '../../assets/images/about-banner.jpg';
 import './About.scss';
 
 const About = () => {
-  console.log(Data);
   return (
     <div>
       <div className='about-banner'>
@@ -18,7 +17,7 @@ const About = () => {
             key={collapse.id}
             title={collapse.title}
             description={collapse.text}
-            opened={collapse.id === "1" ? true : false}
+            opened={collapse === Data[0] ? true : false}
           />
         ))}
       </div>

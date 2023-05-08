@@ -1,3 +1,5 @@
+@import '../../style/variables.scss';
+
 .slideshow-hidden {
   display: none;
 }
@@ -44,13 +46,13 @@
 .housing-title {
   font-weight: 500;
   font-size: 36px;
-  color: #ff6060;
+  color: $primary-color;
 }
 
 .housing-location {
   font-weight: 500;
   font-size: 18px;
-  color: #ff6060;
+  color: $primary-color;
 }
 
 .housing-tags {
@@ -65,8 +67,8 @@
   width: fit-content;
   padding: 0px 10px;
   height: 25px;
-  background-color: #ff6060;
-  color: white;
+  background-color: $primary-color;
+  color: $secondary-color;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -88,7 +90,7 @@
 }
 
 .owner-name {
-  color: #ff6060;
+  color: $primary-color;
   font-weight: 500;
   font-size: 18px;
   width: fit-content;
@@ -99,6 +101,13 @@
   width: 64px;
   height: 64px;
 }
+
+
+
+
+
+
+/* MEDIA QUERIES */
 
 @media (max-width: 768px) {
 .housing-location{

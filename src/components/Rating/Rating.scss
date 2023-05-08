@@ -1,19 +1,16 @@
 .rating {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
+}
 
+/* MEDIA QUERIES */
 
-  }
-
-  @media (max-width: 768px) {
-    .rating{
-        
-        align-items: center;
-        & img{
-            height: 13px;
-            width: 13px;
-        }
-
+@media (max-width: 768px) {
+  .rating {
+    align-items: center;
+    & img {
+      height: 13px;
+      width: 13px;
     }
-    
   }
+}

@@ -1,5 +1,8 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
 .header {
-  display: flex;
+  @include flex-center;
   justify-content: space-between;
   width: 100%;
 
@@ -10,22 +13,20 @@
 }
 
 .navigation-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-center;
   gap: 57px;
   padding: 0;
 
   &__element {
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
     list-style: none;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 34px;
-    display: flex;
-    align-items: flex-end;
-    text-align: right;
-    color: #ff6060;
+    color: $primary-color;
     text-decoration: none;
 
     &:hover {
@@ -39,12 +40,13 @@
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+/* MEDIA QUERIES */
 
-.header__logo{
-  height: 47px;
-  width: 145px;
-}
+@media (max-width: 768px) {
+  .header__logo {
+    height: 47px;
+    width: 145px;
+  }
 
   .navigation-list {
     gap: 15px;
